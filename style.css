@@ -28,11 +28,18 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
+:root {
+  --color-blue: rgb(54, 89, 215);
+  --color-grey: rgb(164, 166, 176);
+  --color-yellow: rgb(226, 216, 27);
+}
+
 body {
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Courier New', Courier, monospace;
   width: 100vw;
   height: 100vh;
+  background-color: var(--color-grey);
 }
 
 body ul {
@@ -42,10 +49,13 @@ body ul {
 .container {
   display: grid;
   grid: 100px 1fr 1fr / 1fr 3fr 1fr;
+  gap: 15px;
 }
 
 .header {
+  margin-left: -15px; /*CUIDADO*/
   grid-column: 2 / -1;
+  background-color: white;
 
   display: grid;
   grid: 1fr 2fr / 2fr 1fr;
@@ -53,6 +63,51 @@ body ul {
   > div {
     align-self: center;
   }
+}
+
+.header .search input {
+  background-color: var(--color-grey);
+  border-radius: 10% / 50%;
+}
+
+.header .user-options {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 15px;
+}
+
+.header .user-info {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+
+.header .user-info img {
+  grid-row: 1 / -1;
+  gap: 15px;
+}
+
+.header .user-info span:first-of-type {
+  font-size: 0.8rem;
+}
+
+.header .user-info span:last-of-type {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header .projects-control ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.header .projects-control button {
+  width: 8rem;
+  background-color: var(--color-blue);
+  color: white;
+  border-radius: 10% / 50%;
+  border: none;
 }
 
 /* maybe replaceable R1*/
@@ -67,31 +122,69 @@ body ul {
 /* end R1 */
 
 .sidebar {
+  background-color: var(--color-blue);
+  color: white;
+
   padding: 15px;
   grid-row: 1 / -1;
 
   display: grid;
   gap: 20px;
   justify-items: start;
-  justify-content: start;
+  align-items: start;
+}
+
+.sidebar ul {
+  display: grid;
+  gap: 15px;
+  justify-items: start;
 }
 
 .article {
+  padding: 15px;
+  background-color: var(--color-grey);
   grid-row: 2 / -1;
 }
 
 .article .projects {
   display: grid;
+  gap: 15px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, 1fr);
 }
 
 .projects .card {
   height: 300px;
+  padding: 15px;
+  background-color: white;
+  border-left: 10px solid var(--color-yellow);
+  border-radius: 5px;
+
+  display: grid;
+  grid-template-rows: 1fr 50px;
+}
+
+.projects .card .description {
+  overflow: hidden;
+  place-self: start;
+  .p {
+    color: var(--color-grey);
+  }
+}
+
+.projects .card .card-controls {
+  place-self: end;
+
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 50px);
 }
 
 .notification ul{
   padding: 15px;
   overflow: auto;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .notification li {
@@ -114,7 +207,9 @@ body ul {
 .trending ul {
   padding: 15px;
   display: grid;
-  gap: 15px;  
+  gap: 15px;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .trending li {
