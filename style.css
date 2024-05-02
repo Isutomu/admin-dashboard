@@ -29,9 +29,12 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 :root {
-  --color-blue: rgb(54, 89, 215);
-  --color-grey: rgb(164, 166, 176);
-  --color-yellow: rgb(226, 216, 27);
+  --color-blue: #1992d4;
+  --color-grey-background: #e2e8f0;
+  --color-grey-text: #636363;
+  --color-grey-buttons: #333333;
+  --color-grey-announcements: #d2d2d2;
+  --color-yellow: #f0b429;
 }
 
 body {
@@ -39,7 +42,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   width: 100vw;
   height: 100vh;
-  background-color: var(--color-grey);
+  background-color: var(--color-grey-background);
 }
 
 body ul {
@@ -66,7 +69,7 @@ body ul {
 }
 
 .header .search input {
-  background-color: var(--color-grey);
+  background-color: var(--color-grey-background);
   border-radius: 10% / 50%;
 }
 
@@ -142,7 +145,6 @@ body ul {
 
 .article {
   padding: 15px;
-  background-color: var(--color-grey);
   grid-row: 2 / -1;
 }
 
@@ -168,7 +170,7 @@ body ul {
   overflow: hidden;
   place-self: start;
   .p {
-    color: var(--color-grey);
+    color: var(--color-grey-text);
   }
 }
 
@@ -190,9 +192,13 @@ body ul {
 .notification li {
   height: 150px;
   padding: 15px 0;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid var(--color-grey-announcements);
 
   font-size: 0.5rem;
+}
+
+.notification li p {
+  color: var(--color-grey-text);
 }
 
 .notification li:first-child {
@@ -217,6 +223,14 @@ body ul {
   grid-template-columns: 50px 1fr;
   grid-template-rows: 1fr 1fr;
   align-items: center;
+}
+
+.trending li p:first-child {
+  font-weight: bold;
+}
+
+.trending li p:last-child {
+  color: var(--color-grey-text);
 }
 
 .trending img {
