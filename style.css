@@ -113,7 +113,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  font-size: 16px;
+  font-size: 20px;
   width: 100vw;
   height: 100vh;
   background-color: var(--color-grey-background);
@@ -310,4 +310,102 @@ body ul {
 
 .trending img {
   grid-row: 1 / -1;
+}
+
+/* SVG's */
+.icon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  mask-size: cover;
+  margin-right: 20px;
+}
+
+.icon-user-big {
+  mask: url("./icons/account-circle.svg");
+  width: 4rem;
+  height: 4rem;
+  background: black;
+}
+
+.icon-dash {
+  mask: url("./icons/view-dashboard.svg");
+  width: 4rem;
+  height: 4rem;
+  background: white;
+}
+
+.icon-user-small {
+  mask: url("./icons/account-circle.svg");
+  background: black;
+}
+
+.icon-home {
+  mask: url("./icons/home.svg");
+  background: white;
+}
+
+.icon-card {
+  mask: url("./icons/card-account-details-outline.svg");
+  background: white;
+}
+
+.icon-message {
+  mask: url("./icons/message-reply-outline.svg");
+  background: white;
+}
+
+.icon-clock {
+  mask: url("./icons/clock-time-three.svg");
+  background: white;
+}
+
+.icon-file {
+  mask: url("./icons/file-multiple.svg");
+  background: white;
+}
+
+.icon-group {
+  mask: url("./icons/account-group.svg");
+  background: white;
+}
+
+.icon-cog {
+  mask: url("./icons/cog.svg");
+  background: white;
+}
+
+.icon-help {
+  mask: url("./icons/help-box.svg");
+  background: white;
+}
+
+.icon-shield {
+  mask: url("./icons/shield-check.svg");
+  background: white;
+}
+
+.icon-bell {
+  mask: url("./icons/bell-ring-outline.svg");
+  background: black;
+}
+
+.icon-star {
+  mask: url("./icons/star-plus-outline.svg");
+  background: var(--color-grey-buttons);
+}
+
+.icon-eye {
+  mask: url("./icons/eye-plus-outline.svg");
+  background: var(--color-grey-buttons);
+}
+
+.icon-fork {
+  mask: url("./icons/source-fork.svg");
+  background: var(--color-grey-buttons);
+}
+
+.icon-magnify {
+  mask: url("./icons/magnify.svg");
+  background: var(--color-grey-buttons);
 }
